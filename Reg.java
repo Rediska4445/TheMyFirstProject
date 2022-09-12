@@ -13,12 +13,6 @@ public class Reg{
 	public static void main(String[] args) {
         String nameReg;
         String passReg;      	
-		String domain = ".su";
-		String stSessionId = "https://ni647ikf3i2f/" + Math.random()*16 + domain;
-		boolean ConnectionHandler = true;
-		if(ConnectionHandler == true) {
-			System.out.println("Соединение установлено, пакеты проверены, id(" + stSessionId + ")сгенерирован, регистрация при защищённом трафике доступна");
-			// Anti-Hacking 
 		Scanner scanner = new Scanner(System.in);			
 		System.out.println("Имя");
 		if(scanner.hasNextLine()) {	
@@ -34,11 +28,8 @@ public class Reg{
             System.out.println("Вы успешно зарегистрировались");
 			} catch(IOException ex){
           System.out.println(ex.getMessage());
-				}
-			}
-		} else if(ConnectionHandler == false) {
-			System.out.println("Соединение не было установлено");
-			System.exit(0);
-	  } 
+		}
+	    }
+	} 
    }
 }
