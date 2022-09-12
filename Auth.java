@@ -36,15 +36,15 @@ public class Auth{
 			if(UserDataTo.hasNextLine()) {	
     			String UserName = UserDataTo.nextLine(); // Данные пользователя
     			String UserPass = UserDataTo.nextLine(); // Данные пользователя
-    			File file = new File("DB\\DBUsers.txt");
+    			File file = new File("DBUsers.txt");
     	        Scanner sc = new Scanner(file);
     	        BufferedReader reader = new BufferedReader(new FileReader("DBUsers.txt"));
    	        while(sc.hasNextLine()){    	        	
     	            String Read = (sc.nextLine());    
     	            boolean isContains = Files
-    	                    .lines(Paths.get("DB\\DBUsers.txt"))
+    	                    .lines(Paths.get("DBUsers.txt"))
     	                    .anyMatch(e->e.contains(UserName + " " + UserPass));
-    	    		File file1 = new File("DB\\DBUsers.txt");
+    	    		File file1 = new File("DBUsers.txt");
     		            if(isContains == false) {
     			            	System.out.println("Неправильные введённые данные");
     			            	System.out.println("Попробуй ещё раз \n");
@@ -57,10 +57,10 @@ public class Auth{
     		            	System.out.println("Err: Ошибка авторизации");
     		            }
    	        		}
-    			}
+    			    }
 		  	}	
 		} catch (IOException e) {
 			System.out.println("Err: " + e.getMessage());
-		}
 	}
+    }
 }
