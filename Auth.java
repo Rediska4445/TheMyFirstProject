@@ -37,15 +37,15 @@ public class auth {
 	            System.out.println("Пароль: ");
     			String UserName = UserDataTo.nextLine(); // Данные пользователя
     			String UserPass = UserDataTo.nextLine(); // Данные пользователя
-    			File file = new File("DB/DBUsers.txt");
+    			File file = new File("DBUsers.txt");
     	        Scanner sc = new Scanner(file);
-    	        BufferedReader reader = new BufferedReader(new FileReader("DB/DBUsers.txt"));
+    	        BufferedReader reader = new BufferedReader(new FileReader("DBUsers.txt"));
    	        while(sc.hasNextLine()){    	        	
     	            String Read = (sc.nextLine());    
     	            boolean isContains = Files
-    	                    .lines(Paths.get("DB/DBUsers.txt"))
+    	                    .lines(Paths.get("DBUsers.txt"))
     	                    .anyMatch(e->e.contains("Имя: " + UserName + " Пароль: " + UserPass));
-    	    		File file1 = new File("DB/DBUsers.txt");
+    	    		File file1 = new File("DBUsers.txt");
     	    		if((UserPass.equals("") || UserName.equals("")) || isContains == false) {
 			            System.out.println("Неправильно введённые данные \nПопробуй ещё раз\n");
 			            auth();
